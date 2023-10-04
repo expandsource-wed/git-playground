@@ -47,3 +47,27 @@ git 다양한 기능 연습하기
 
 
 # stash
+
+
+## 원격저장소 (GitHub)에서 pull request 되돌리기(revert)
+- 되돌려야하는 PR (merge가 완료된)이 있을 경우
+- 깃헙저장소 > pull request > closed
+- 되돌려야하는 PR 선택 후
+- Revert 선택
+- revert를 위한 새로운 PR이 생성됨
+- 새로운 PR을 merge하고 나면 기존 PR이 되돌려진 상태로 복귀
+
+## 브랜치 보호하기
+- branch protection rule
+- GitHub > 저장소 > Setting > Branches
+- > Add branch protection rules
+    - Branch name pattern
+        - (패턴 가능 feature* => 모든 feature 브랜치)
+        - 일반적으로 main 브랜치를 보호
+    - Requires a pull request before merging
+        - 반드시 병합하기 위해서는 PR이 필요
+        - (일반적인 commit & push를 통한 병합은 원격저장소에서 block이 됨)
+        - Requires approvals
+            - PR 병합하기 위해서 반드시 승인이 있어야 하는 Reviewer의 수
+    - 룰을 설정하게 되면 main 브랜치가 보호된다.
+    
